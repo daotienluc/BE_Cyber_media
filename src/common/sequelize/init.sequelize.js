@@ -1,9 +1,10 @@
 import { Sequelize } from "sequelize";
 import initModels from "../../models/init-models.js";
+import { DATABASE_URL } from "../constant/app.constant.js";
 
-export const sequelize = new Sequelize(
-  "mysql://root:quynhiu1@localhost:3307/db_cyber_media"
-);
+export const sequelize = new Sequelize(DATABASE_URL, {
+  logging: false,
+});
 const models = initModels(sequelize);
 
 sequelize

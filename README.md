@@ -2,7 +2,7 @@
 // tạo table bằng lệnh sql
 // sử dụng thư viện sequelize-auto
 // npm i sequelize-auto
-// npx sequelize-auto -h localhost -d db_cyber_media -u root -x quynhiu1 -p 3307 --dialect mysql -o src/models -a src/models/additional.json
+// npx sequelize-auto -h localhost -d db_app_food -u root -x quynhiu1 -p 3307 --dialect mysql -o src/models -a src/models/additional.json
 
 // Query Parameters
 // Query Params thường dùng để phân trang, search, filter

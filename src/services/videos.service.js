@@ -1,10 +1,13 @@
-import { BadRequestException } from "../common/helpers/error.helper.js";
+import { prisma } from "../common/prisma/init.prisma.js";
 import models from "../common/sequelize/init.sequelize.js";
 
 const videoService = {
   videoList: async () => {
-    // throw new BadRequestException("Lấy danh sách video không thành công");
-    const videos = await models.videos.findAll({ raw: true });
+    // Sử dụng sequelize
+    // const videos = await models.videos.findAll({ raw: true });
+
+    // Sử dụng prisma
+    const videos = await prisma.videos.findMany();
     return videos;
   },
 };
