@@ -4,7 +4,7 @@ import videoService from "../services/videos.service.js";
 const videoController = {
   videoList: async (req, res, next) => {
     try {
-      const videos = await videoService.videoList();
+      const videos = await videoService.videoList(req);
       const resData = responseSuccess(
         videos,
         "Lấy danh sách video thành công !",

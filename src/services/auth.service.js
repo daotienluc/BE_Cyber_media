@@ -1,3 +1,7 @@
+import {
+  ACCESS_TOKEN_EXPIRED,
+  ACCESS_TOKEN_SECRET,
+} from "../common/constant/app.constant.js";
 import { BadRequestException } from "../common/helpers/error.helper.js";
 import { prisma } from "../common/prisma/init.prisma.js";
 import bcrypt from "bcrypt";
@@ -68,8 +72,8 @@ const authService = {
     if (!userId) {
       throw new BadRequestException("Không có userId để tạo token");
     }
-    const accessToken = jwt.sign({ userId: userId }, "ACCESS_TOKEN_SECRET", {
-      expiresIn: "1d",
+    const accessToken = jwt.sign({ userId: userId }, ACCESS_TOKEN_SECRET, {
+      expiresIn: ACCESS_TOKEN_EXPIRED,
     });
     return accessToken;
   },

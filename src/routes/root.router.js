@@ -10,7 +10,7 @@ rootRouter.get("/", (req, res, next) => {
   res.send("Wellcome");
 });
 
-rootRouter.use("/videos", videoRouter);
+rootRouter.use("/video", videoRouter);
 rootRouter.use("/users", usersRouter);
 rootRouter.use("/car", carsRouter);
 
